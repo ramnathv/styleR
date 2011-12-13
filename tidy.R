@@ -8,22 +8,22 @@ tidy_source = function(source = "clipboard", output = TRUE, text = NULL,
   align.assign    = getOption('align.assign'   , TRUE),
   reindent.lines  = getOption('reindent.lines' , TRUE),
   width.cutoff    = 0.75 * getOption("width"), ...) {
-	
-	# READ, PROCESS AND TIDY SOURCE FILE ----------------------------------
+  
+  # READ, PROCESS AND TIDY SOURCE FILE ----------------------------------
   text_block <- readLines(source, warn = FALSE)
   text_block <- escape_backslash(text_block)
 
   if (keep.comment) {
-	  text_block <- mask_comments(text_block, keep.space)
-	  text_block <- mask_inline(text_block)
-	}
-	
-	if (keep.blank.line) {
-	  text_block <- mask_blank_lines(text_block)
-	}
-	
-	if (replace.assign){
-	  text_block <- replace_assignment(text_block)
+    text_block <- mask_comments(text_block, keep.space)
+    text_block <- mask_inline(text_block)
+  }
+  
+  if (keep.blank.line) {
+    text_block <- mask_blank_lines(text_block)
+  }
+  
+  if (replace.assign){
+    text_block <- replace_assignment(text_block)
   }
     
   text_block <- tidy_block(text_block)

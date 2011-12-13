@@ -1,4 +1,4 @@
 escape_backslash <- function(...){
   strings <- unlist(list(...))
-   gsub("\\\\", "\\\\\\\\\\", strings)  
+  gsub("\\\\", "\\\\\\\\\\", strings)  
 }
