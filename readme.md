@@ -8,7 +8,7 @@ You can test these functions by sourcing all the files and running
 
 
 
-```
+```r
 tidy_source("tests/test_file.R")
 tidy_source("tests/test_align.R")
 tidy-source("tests/test_indent.R")
