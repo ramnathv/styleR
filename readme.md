@@ -19,10 +19,12 @@ There are still several rough edges. For instance, aligning assignments, aligns 
 ## Quick R ##
 
 
-    getwd()             # get current working directory
-    ls()                # get list of objects in workspace
-    setwd(mydir)        # change current directory to mydir
-    q()                 # quit R
+```r
+getwd()             # get current working directory
+ls()                # get list of objects in workspace
+setwd(mydir)        # change current directory to mydir
+q()		    # quit R
+```
 
 
 ## 2-Sample t-Tests ##
@@ -31,26 +33,31 @@ A `two sample t-test` can be interpreted as comparing the means across two group
 
 Accordingly, `R` allows you to do a 2-sample t-test in multiple ways, which are summarized below.
 
-
-    t.test(y ~ x)                   # where y is numeric and x is (binary) categorical
-    t.test(y1, y2)                  # where y1 and y2 are numeric
-    t.test(y1, y2, var.equal = T)   # pooled t-test
-    t.test(y1, y2, paired = TRUE)   # matched pair t-test
-    t.test(y1, y2, alt = 'less')    # left tailed, 2-sample t-test, unpooled
-    t.test(y1, y2, alt = 'greater') # right tailed, 2-sample t-test, unpooled
+```r
+t.test(y ~ x)                   # where y is numeric and x is (binary) categorical
+t.test(y1, y2)                  # where y1 and y2 are numeric
+t.test(y1, y2, var.equal = T)   # pooled t-test
+t.test(y1, y2, paired = TRUE)   # matched pair t-test
+t.test(y1, y2, alt = 'less')    # left tailed, 2-sample t-test, unpooled
+t.test(y1, y2, alt = 'greater') # right tailed, 2-sample t-test, unpooled
+```
 
   
 Here is a code chunk in Ruby
 
-    def foo
-      bar
-    end
-	
+```ruby
+def foo
+  bar
+end
+```
+
 A HTML chunk
-	
-    <body>
-      <div id="sidebar"> ... </div>
-      <div id="main">
-        {{content}}
-      </div>
-    </body>
+
+```html	
+<body>
+  <div id="sidebar"> ... </div>
+    <div id="main">
+      {{content}}
+    </div>
+</body>
+```
