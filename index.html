@@ -40,6 +40,23 @@ $ git fetch origin
 $ git checkout gh-pages
 </code></pre>
 
+<pre><code>
+add_theme <- function(theme){
+  css_file <- system.file('themes', sprintf('%s.css', theme), package = 'knitr')
+  css_doc  <- highlight::css.parser(css_file)
+  bgcol    <- css_doc$background$color
+  fgcol    <- css_doc$prompt$color
+  tem_file <- system.file('templates', 'highlight.css', package = 'slidify')
+  template <- readLines(tem_file)
+  if (!file.exists('inst/frameworks/highlight')) {
+    dir.create('inst/frameworks/highlight')
+  }
+  theme_file <- sprintf("inst/frameworks/highlight/%s.css", theme)
+  file.copy(css_file, theme_file)
+  cat(whisker.render(template), file = theme_file, append = TRUE)
+}
+</code></pre>
+
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
 <h3>Designer Templates</h3>
